@@ -6,15 +6,17 @@ public class PlayerMovement : MonoBehaviour
 {
 
     Rigidbody2D rb;
+    private Animator anim;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         float dirX = Input.GetAxisRaw("Horizontal");
 
@@ -23,6 +25,17 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, 8f);
+        }
+
+        if (dirX > 0f)
+        {
+            anim.SetBool("Running", true);
+        } else if (dirX < 0f)
+        {
+            anim.SetBool("Running", true);
+        } else
+        {
+            anim.SetBool("Running", false);
         }
     }
 }
