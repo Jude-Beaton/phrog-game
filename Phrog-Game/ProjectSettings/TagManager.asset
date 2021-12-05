@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fire
+  - Cherry
+  - Trap
   layers:
   - Default
   - TransparentFX
@@ -41,6 +43,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 2944838959
+    locked: 0
+  - name: Doors
+    uniqueID: 624327555
     locked: 0
   - name: Default
     uniqueID: 0
