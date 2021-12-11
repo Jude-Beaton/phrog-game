@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Mansion.unity
+    guid: eb2b0c9305499f54f82060eb3407617d
+  - enabled: 1
+    path: Assets/Scenes/Cellar.unity
+    guid: 7c064d78b423374409233aca05c29fd1
   m_configObjects: {}

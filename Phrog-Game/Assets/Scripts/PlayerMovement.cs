@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
 
     private float dirX = 0f;
+    [SerializeField] private int jumpLim = 2;
+    private int jumps = 0;
     [SerializeField] private float moveSpeed = 8f;
     [SerializeField] private float jumpSpeed = 8f;
 
@@ -38,6 +40,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+            jumps = 1;
+        } else if (Input.GetButtonDown("Jump") && jumps < jumpLim)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+            jumps++;
         }
 
         updateAnimation();
